@@ -1,0 +1,195 @@
+:root {
+  --main-border-radius: 3rem;
+  --main-section-width: 400px;
+  --mobile-section-width: 250px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.order-summary {
+  background-color: white;
+  border-radius: var(--main-border-radius);
+  box-shadow: 0 0 5px #ccc;
+  display: flex;
+  margin: 20px auto;
+  width: var(--main-section-width);
+}
+
+@media screen and (max-width: 768px) {
+  .order-summary {
+    flex-direction: column;
+    width: var(--mobile-section-width);
+  }
+}
+
+.order-summary .result,
+.order-summary .summary {
+  padding: 2rem;
+  width: 200px;
+}
+
+.order-summary .result {
+  background-color: #5a3ef9;
+  border-radius: var(--main-border-radius);
+  color: #f8faff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: center;
+}
+
+.order-summary .result > p:first-child {
+  color: #c9c6ff;
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 769px) {
+  .order-summary .result > p:first-child,
+  .order-summary .result .result-text p:first-child {
+    margin: 0;
+  }
+}
+
+.order-summary .result .score {
+  background-color: #462ad7;
+  border-radius: 50%;
+  height: 13rem;
+  width: 13rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-summary .result .score p:first-child {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 0;
+}
+.order-summary .result .score p:last-child {
+  color: #7a6ef2;
+}
+
+.order-summary .result .result-text p:first-child {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.order-summary .result .result-text p:last-child {
+  color: #c9c6ff;
+  font-size: 1.2rem;
+}
+
+/*Summary section */
+
+.order-summary .summary > p:first-child {
+  font-size: 1.6rem;
+  color: #303b5a;
+}
+
+.order-summary .summary .summary-content div {
+  margin-bottom: 1.3rem;
+  font-weight: bold;
+}
+
+.order-summary .summary .summary-content div img {
+  margin-right: 5px;
+  height: 1rem;
+}
+
+.order-summary .summary .summary-content .reaction,
+.order-summary .summary .summary-content .memory,
+.order-summary .summary .summary-content .verbal,
+.order-summary .summary .summary-content .visual {
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+
+.order-summary .summary .summary-content .reaction::before,
+.order-summary .summary .summary-content .memory::before,
+.order-summary .summary .summary-content .verbal::before,
+.order-summary .summary .summary-content .visual::before {
+  position: absolute;
+  color: #303b5a;
+  right: 30px;
+}
+
+.order-summary .summary .summary-content .reaction {
+  background-color: #fff6f5;
+  color: #ef7a79;
+}
+
+.order-summary .summary .summary-content .reaction::before {
+  content: "80";
+}
+.order-summary .summary .summary-content .memory {
+  background-color: #fffbf2;
+  color: #f9d8a4;
+}
+
+.order-summary .summary .summary-content .memory::before {
+  content: "92";
+}
+
+.order-summary .summary .summary-content .verbal {
+  background-color: #f2fbfa;
+  color: #73c4b1;
+}
+
+.order-summary .summary .summary-content .verbal::before {
+  content: "61";
+}
+
+.order-summary .summary .summary-content .visual {
+  background-color: #f3f3fd;
+  color: #4248a3;
+}
+
+.order-summary .summary .summary-content .visual::before {
+  content: "72";
+}
+
+.order-summary .summary .summary-content .reaction::after,
+.order-summary .summary .summary-content .memory::after,
+.order-summary .summary .summary-content .verbal::after,
+.order-summary .summary .summary-content .visual::after {
+  content: "/ 100";
+  position: absolute;
+  color: #9e9ba2;
+  right: 5px;
+}
+
+.order-summary .summary button {
+  background-color: #303b5a;
+  color: white;
+  padding: 1rem;
+  border-radius: var(--main-border-radius);
+  margin-top: 1.5rem;
+  width: 100%;
+  border-color: transparent;
+}
+
+.order-summary .summary button:hover {
+  background-color: #5a3ef9;
+}
+
+@media screen and (max-width: 768px) {
+  .order-summary .result,
+  .order-summary .summary {
+    width: 100%;
+  }
+}
