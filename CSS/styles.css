@@ -1,7 +1,9 @@
 :root {
   --main-border-radius: 3rem;
-  --main-section-width: 400px;
-  --mobile-section-width: 250px;
+  --main-section-width: 70rem;
+  --main-section-height: 50rem;
+  --mobile-section-width: 35rem;
+  --mobile-section-height: fit-content;
 }
 
 * {
@@ -22,27 +24,40 @@ body {
   justify-content: center;
 }
 
+.container {
+  height: var(--mobile-section-height);
+  width: var(--mobile-section-width);
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: var(--main-section-width);
+    height: var(--main-section-height);
+  }
+}
+
 .order-summary {
   background-color: white;
   border-radius: var(--main-border-radius);
   box-shadow: 0 0 5px #ccc;
   display: flex;
-  margin: auto;
-  width: var(--main-section-width);
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 769px) {
   .order-summary {
-    flex-direction: column;
-    width: var(--mobile-section-width);
+    flex-direction: row;
+    width: var(--main-section-width);
+  }
+  .order-summary .result,
+  .order-summary .summary {
+    width: 50%;
   }
 }
 
-.order-summary .result,
-.order-summary .summary {
-  padding: 2rem;
-  width: 200px;
-}
+/*Start of Result Section*/
 
 .order-summary .result {
   background-color: #5a3ef9;
@@ -53,11 +68,12 @@ body {
   justify-content: space-evenly;
   flex-direction: column;
   text-align: center;
+  padding: 2rem;
 }
 
 .order-summary .result > p:first-child {
   color: #c9c6ff;
-  font-size: 1.6rem;
+  font-size: 2rem;
 }
 
 @media screen and (min-width: 769px) {
@@ -65,26 +81,43 @@ body {
   .order-summary .result .result-text p:first-child {
     margin: 0;
   }
+  .order-summary .result > p:first-child {
+    font-size: 2.8rem;
+  }
 }
 
 .order-summary .result .score {
   background-color: #462ad7;
   border-radius: 50%;
-  height: 13rem;
-  width: 13rem;
+  height: 15rem;
+  width: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
 .order-summary .result .score p:first-child {
-  font-size: 4rem;
+  font-size: 4.8rem;
   font-weight: bold;
   margin: 0;
 }
 .order-summary .result .score p:last-child {
   color: #7a6ef2;
   margin: 0;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 769px) {
+  .order-summary .result .score {
+    height: 20rem;
+    width: 20rem;
+  }
+  .order-summary .result .score p:first-child {
+    font-size: 6rem;
+  }
+  .order-summary .result .score p:last-child {
+    font-size: 1.6rem;
+  }
 }
 
 .order-summary .result .result-text p:first-child {
@@ -97,21 +130,36 @@ body {
   font-size: 1.2rem;
 }
 
-/*Summary section */
+@media screen and (min-width: 769px) {
+  .order-summary .result .result-text p:first-child {
+    font-size: 2.8rem;
+  }
+  .order-summary .result .result-text p:last-child {
+    font-size: 1.6rem;
+  }
+}
+/*End of Result Section*/
 
-.order-summary .summary > p:first-child {
-  font-size: 1.6rem;
-  color: #303b5a;
+/*Start Summary section */
+
+.order-summary .summary {
+  padding: 1rem 2rem;
 }
 
-.order-summary .summary .summary-content div {
-  margin-bottom: 1.3rem;
-  font-weight: bold;
+@media screen and (min-width: 769px) {
+  .order-summary .summary {
+    padding: 2rem;
+  }
+}
+
+.order-summary .summary > p:first-child {
+  font-size: 2.8rem;
+  color: #303b5a;
 }
 
 .order-summary .summary .summary-content div img {
   margin-right: 5px;
-  height: 1rem;
+  height: 2rem;
 }
 
 .order-summary .summary .summary-content .reaction,
@@ -121,8 +169,11 @@ body {
   border-radius: 1rem;
   display: flex;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   position: relative;
+  margin-bottom: 1.3rem;
+  font-weight: bold;
+  font-size: 1.6rem;
 }
 
 .order-summary .summary .summary-content .reaction::before,
@@ -131,7 +182,7 @@ body {
 .order-summary .summary .summary-content .visual::before {
   position: absolute;
   color: #303b5a;
-  right: 30px;
+  right: 5rem;
 }
 
 .order-summary .summary .summary-content .reaction {
@@ -176,26 +227,20 @@ body {
   content: "/ 100";
   position: absolute;
   color: #9e9ba2;
-  right: 5px;
+  right: 1rem;
 }
 
 .order-summary .summary button {
   background-color: #303b5a;
   color: white;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: var(--main-border-radius);
   margin-top: 1.5rem;
   width: 100%;
   border-color: transparent;
+  font-size: 1.6rem;
 }
 
 .order-summary .summary button:hover {
   background-color: #5a3ef9;
-}
-
-@media screen and (max-width: 768px) {
-  .order-summary .result,
-  .order-summary .summary {
-    width: 100%;
-  }
 }
