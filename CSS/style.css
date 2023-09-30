@@ -15,6 +15,11 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .order-summary {
@@ -22,7 +27,7 @@ body {
   border-radius: var(--main-border-radius);
   box-shadow: 0 0 5px #ccc;
   display: flex;
-  margin: 20px auto;
+  margin: auto;
   width: var(--main-section-width);
 }
 
@@ -79,6 +84,7 @@ body {
 }
 .order-summary .result .score p:last-child {
   color: #7a6ef2;
+  margin: 0;
 }
 
 .order-summary .result .result-text p:first-child {
