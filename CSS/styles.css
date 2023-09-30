@@ -3,7 +3,6 @@
   --main-section-width: 70rem;
   --main-section-height: 50rem;
   --mobile-section-width: 35rem;
-  --mobile-section-height: fit-content;
 }
 
 * {
@@ -25,7 +24,6 @@ body {
 }
 
 .container {
-  height: var(--mobile-section-height);
   width: var(--mobile-section-width);
 }
 
